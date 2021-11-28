@@ -1,0 +1,29 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: http-go
+  labels:
+    app: http-go
+spec:
+  strategy:
+    type: RollingUpdate
+    # rollingUpdate:
+    # maxSurge: 1
+    # maxUnavailable: 1
+  replicas: 3
+  selector:
+    matchLabels:
+      app: http-go
+  template:
+    metadata:
+      labels:
+        app: http-go
+    spec:
+      containers:
+      - name: http-go
+        image: gasbugs/http-go:v1
+        ports:
+        - containerPort: 8080
+          protocol: TCP
+
