@@ -1,0 +1,19 @@
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: jenkins-manual
+spec:
+  containers:
+  - name: jenkins
+    image: jenkins/jenkins
+    ports:
+    - containerPort: 8080
+
+
+# 모든 리소스 삭제
+# yaml을 사용하여 도커이미지 jenkins로 Jenkins-manual 포드 생성
+# jenkins 포드에서 curl 명령어로 로컬호스트 8080 접속
+# jenkins 포트를 8888로 포트포워딩하기
+# 현재 jenkins-manual의 설정을 yaml로 출력
+#

@@ -6,7 +6,13 @@ metadata:
 spec:
   containers:
   - name: http-go
-    image: gasbus/http-go
+    image: gasbugs/http-go
     ports:
     - containerPort: 8080
 
+
+# kubectl create -f go-http-pod.yaml
+# kubectl get pod http-go -o yaml
+# kubectl describe pod http-go
+#
+# kubectl port-forward http-go 8080:8080
