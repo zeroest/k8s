@@ -1,0 +1,22 @@
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: http-go
+  labels:
+    creation_method: manual
+    env: prod
+spec:
+  containers:
+  - name: http-go
+    image: gasbugs/http-go
+    ports:
+    - containerPort: 8080
+      protocol: TCP
+
+
+# kubectl create -f go-http-pod.yaml
+# kubectl get pod http-go -o yaml
+# kubectl describe pod http-go
+#
+# kubectl port-forward http-go 8080:8080
