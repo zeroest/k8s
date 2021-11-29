@@ -1,0 +1,22 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: http-go
+  name: http-go
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: http-go
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: http-go
+    spec:
+      containers:
+      - image: gasbugs/http-go
+        name: http-go
+
