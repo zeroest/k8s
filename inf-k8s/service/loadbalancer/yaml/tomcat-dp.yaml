@@ -1,0 +1,22 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: tomcat
+  name: tomcat
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: tomcat
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: tomcat
+    spec:
+      containers:
+      - image: tomcat
+        name: tomcattest
+

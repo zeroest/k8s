@@ -1,0 +1,18 @@
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: tomcat-lb
+  labels:
+    app: tomcat-lb
+spec:
+  type: LoadBalancer
+  selector:
+    app: tomcat
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 8080
+    nodePort: 30001
+    
+
