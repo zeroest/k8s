@@ -1,0 +1,32 @@
+{
+    "clusterName": "jira-cluster", 
+    "nodegroupName": "workload", 
+    "scalingConfig": {
+        "minSize": 1, 
+        "maxSize": 2, 
+        "desiredSize": 1
+    }, 
+    "diskSize": 50, 
+    "subnets": [
+        "subnet-02467a7f5574de0f4",
+        "subnet-0a2b0c993f97e86d4",
+        "subnet-0f8174cf55bab6158"
+    ], 
+    "instanceTypes": [
+        "m5.large"
+    ], 
+    "amiType": "AL2_x86_64", 
+    "remoteAccess": {
+        "ec2SshKey": "keypair" 
+    }, 
+    "nodeRole": "arn:aws:iam::264594923212:role/EKS_NodeGroup_Instance_Role", 
+    "labels": {
+        "KeyName": "jira-server"
+    }, 
+    "tags": {
+        "KeyName": "dev"
+    }, 
+    "clientRequestToken": "", 
+    "version": "", 
+    "releaseVersion": ""
+}
