@@ -82,10 +82,19 @@ kubectl argo rollouts promote rollouts-demo
 kubectl argo rollouts pause rollouts-demo
 # 배포 중단
 
+kubectl argo rollouts undo rollouts-demo
+# 롤백 처리 
+
 kubectl-argo-rollouts --help
 # 메뉴얼 확인 
 ```
 
+```
+kubectl apply -f basic-rollout-blue.yaml
+kubectl apply -f basic-rollout-red.yaml
+
+둘다 pause 조건을 수정하여 자동 promote를 수동으로 변경
+```
 
 
 
