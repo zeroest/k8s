@@ -2,10 +2,10 @@
 #!/bin/bash
 
 aws eks create-nodegroup \
-	--cluster-name cluster-name \
-	--nodegroup-name nodegroup-name \
-	--subnets subnet-08ae6472495ec41271 subnet-0ddbe4a446288f2ff1 \
-	--node-role arn:aws:iam::2259532409141:role/eks-node-group-role
+	--cluster-name zero-eks \
+	--nodegroup-name buffer \
+	--subnets subnet-08ae6472495ec4127 subnet-0ddbe4a446288f2ff \
+	--node-role arn:aws:iam::225953240914:role/zero-eks-node-group-role
 
 # https://docs.aws.amazon.com/cli/latest/reference/eks/create-nodegroup.html
 

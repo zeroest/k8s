@@ -2,8 +2,8 @@
 #!/bin/bash
 
 aws eks delete-nodegroup \
-	--cluster-name cluster-name \
-	--nodegroup-name nodegroup-name
+	--cluster-name zero-eks \
+	--nodegroup-name buffer
 
 # https://docs.aws.amazon.com/cli/latest/reference/eks/delete-nodegroup.html
 
