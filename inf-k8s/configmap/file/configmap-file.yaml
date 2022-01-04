@@ -1,0 +1,7 @@
+apiVersion: v1
+data:
+  test: "1234"
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  name: map-name
