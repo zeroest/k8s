@@ -3,6 +3,9 @@
 
 [조대협님](https://bcho.tistory.com/1291)
 
+## Resource Quota vs Limit Range
+Resource Quota가 네임 스페이스 전체의 리소스양을 정의한다면, Limit Range는 컨테이너 개별 자원의 사용 가능 범위를 지정한다.
+
 ## Overcommitted 상태 
 이  request와 limit의 개념이 있기 때문에 생기는 문제인데, request 된 양에 따라서 컨테이너를 만들었다고 하더라도, 컨테이너가 운영이되다가 자원이 모자르면 limit 에 정의된 양까지 계속해서 리소스를 요청하게 된다.
 컨테이너의 총 Limit의 양이 실제 시스템이 가용한 resource의 양보다 많을 수 있는 경우가 발생한다. 이를 overcommitted 상태라고 한다.
