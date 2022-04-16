@@ -1,0 +1,16 @@
+
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: "ingress"
+  annotations:
+    kubernetes.io/ingress.class: alb # the value we set in alb-ingress-controller
+    alb.ingress.kubernetes.io/scheme: internet-facing
+spec:
+  rules:
+    - http:
+        paths:
+          - path: /*
+            backend:
+              serviceName: "ingress-test"
+              servicePort: 80
