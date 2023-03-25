@@ -20,9 +20,3 @@ kubectl get pod --show-labels -l 'env'
 kubectl get pod --show-labels -l '!env'
 kubectl get pod --show-labels -l 'env!=test'
 kubectl get pod --show-labels -l 'env!=test,rel=beta'
-
-# 레이블 배치 전략 
-https://www.replex.io/blog/9-best-practices-and-examples-for-working-with-kubernetes-labels?fbclid=IwAR0S2tT3iw8FIkVYWwyjL8OW6IWi_gXfk0fDkAk57o6re1rRnoSRRzFVXiM
-
-
-
