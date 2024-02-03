@@ -12,6 +12,7 @@ spec:
 
 
 # kubectl create -f go-http-pod.yaml
+# kubectl get pod http-go -o wide
 # kubectl get pod http-go -o yaml
 # kubectl describe pod http-go
 #

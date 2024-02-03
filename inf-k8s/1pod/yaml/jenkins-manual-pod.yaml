@@ -16,4 +16,11 @@ spec:
 # jenkins 포드에서 curl 명령어로 로컬호스트 8080 접속
 # jenkins 포트를 8888로 포트포워딩하기
 # 현재 jenkins-manual의 설정을 yaml로 출력
-#
+
+# kubectl create -f jenkins-manual-pod.yaml
+# kubectl get pod -w
+# kubectl exec jenkins-manual -- curl 127.0.0.1:8080 -s
+# kubectl port-forward jenkins-manual 8888:8080
+# kubectl logs jenkins-manual
+# kubectl get pod jenkins-manual -o yaml
+# kubectl describe pod jenkins-manual
