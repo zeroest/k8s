@@ -1,0 +1,50 @@
+
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  # 레플리케이션컨트롤러 이름
+  name: rc-nodejs
+spec:
+  # 복제본 수
+  replicas: 3
+  # 라벨 셀렉터
+  selector:
+    app: nodejs
+  # 포드 템플릿
+  template:
+    # 포드와 완전히 동일
+    metadata:
+      labels:
+        app: nodejs
+    spec:
+      containers:
+        - name: nodejs
+          image: gasbugs/nodejs
+          ports:
+            - containerPort: 8080
+              protocol: TCP
+
+# kubectl get pod
+# kubctl get rc
+
+# 포드를 임의로 정지시켜 반응 확인
+# kubectl delete pod rc-nodejs-8r7hz
+
+# 레플리케이션 정보 확인
+# kubectl describe rc rc-nodejs
+
+# 레플리카컨트롤러의 관리 레이블 벗어나기
+# kubectl get pod -L app
+# $ kubectl get pod -L app
+#   NAME              READY   STATUS    RESTARTS   AGE     APP
+#   rc-nodejs-ctfvn   1/1     Running   0          9m15s   nodejs
+#   rc-nodejs-mkjvq   1/1     Running   0          9m15s   nodejs
+#   rc-nodejs-sxpwr   1/1     Running   0          4m21s   nodejs
+
+# kubectl label pod rc-nodejs-sxpwr app=nodejs-v2 --overwrite
+# $ kubectl get pod -L app
+#   NAME              READY   STATUS              RESTARTS   AGE     APP
+#   rc-nodejs-cq5gr   0/1     ContainerCreating   0          3s      nodejs
+#   rc-nodejs-ctfvn   1/1     Running             0          10m     nodejs
+#   rc-nodejs-mkjvq   1/1     Running             0          10m     nodejs
+#   rc-nodejs-sxpwr   1/1     Running             0          5m13s   nodejs-v2
