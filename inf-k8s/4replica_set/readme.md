@@ -24,3 +24,16 @@
 - 포드가 없는 경우 새 포드를 항상 실행
 - 노드 장애 발생 시 다른 노드에 복제본 생성
 - 수동, 자동으로 수평 스케일링
+
+## ReplicaSet
+
+[[k8s docs] ReplicaSet](https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/)
+
+- 쿠버네티스 1.8 버전부터 Deployment, DaemonSet, ReplicaSet, StatefulSet 네 API가 베타로 업데이트되고 1.9버전에서는 정식 버전으로 업데이트
+- 레플리카셋은 차세대 리플리케이션컨트롤러로 rc를 완전히 대체 가능
+- 일반적으로 레플리카셋을 직접 생성하지 않고 상위 수준의 디플로이먼트 리소스를 만들 때 자동으로 생성
+
+레플리케이션 컨트롤러 vs 레플리카셋
+- 레플리카셋이 더 풍부한 표현식 포드 셀렉터 사용 가능
+  - rc: 특정 레이블을 포함하는 포드가 일치하는지 확인
+  - rs: 특정 레이블이 없거나 해당 값과 관계없이 특정 레이블 키를 포함하는 포드를 매치하는지 확인

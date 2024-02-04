@@ -25,7 +25,7 @@ spec:
               protocol: TCP
 
 # kubectl get pod
-# kubctl get rc
+# kubectl get rc
 
 # 포드를 임의로 정지시켜 반응 확인
 # kubectl delete pod rc-nodejs-8r7hz

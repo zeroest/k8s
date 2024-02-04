@@ -1,0 +1,29 @@
+
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  # 레플리카셋 이름
+  name: rs-nodejs
+spec:
+  replicas: 3
+  selector:
+    # 레이블을 매칭하는 별도의 표현 방식 존재
+    matchExpressions:
+      - key: app
+        operator: In
+        values:
+          - nodejs
+#    matchLabels:
+#      app: nodejs
+  template:
+    metadata:
+      labels:
+        app: nodejs
+    spec:
+      containers:
+        - name: nodejs
+          image: gasbugs/nodejs
+          ports:
+            - containerPort: 8080
+              protocol: TCP
+
