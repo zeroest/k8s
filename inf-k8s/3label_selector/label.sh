@@ -18,5 +18,5 @@ kubectl get pod -L app,rel
 # 레이블로 필터링하여 검색
 kubectl get pod --show-labels -l 'env'
 kubectl get pod --show-labels -l '!env'
-kubectl get pod --show-labels -l 'env!=test'
+kubectl get pod --show-labels -l 'env=test'
 kubectl get pod --show-labels -l 'env!=test,rel=beta'

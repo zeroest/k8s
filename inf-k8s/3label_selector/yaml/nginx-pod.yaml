@@ -1,0 +1,23 @@
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx
+  labels:
+    app: nginx
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+    ports:
+    - containerPort: 80
+      protocol: TCP
+
+
+# kubectl create -f nginx-pod.yaml
+# kubectl get pod -w
+# kubectl port-forward nginx 80:80
+# kubectl get pod -l 'app=nginx'
+# kubectl get pod -l 'app=nginx' -L app
+# kubectl label pod nginx team=dev1
+# kubectl get pod --show-labels

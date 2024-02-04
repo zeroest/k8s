@@ -14,8 +14,7 @@ spec:
       protocol: TCP
 
 
-# kubectl create -f go-http-pod.yaml
-# kubectl get pod http-go -o yaml
-# kubectl describe pod http-go
-#
-# kubectl port-forward http-go 8080:8080
+# kubectl create -f go-http-pod-v3.yaml
+# kubectl get pod --show-labels
+# kubectl get pod -L env,creation_method
+# kubectl get pod -l env
