@@ -2,23 +2,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: deploy-jenkins
+  name: http-go
   labels:
-    app: dp-jenkins
+    app: http-go
 spec:
-  replicas: 2
+  replicas: 3
   selector:
     matchLabels:
-      app: jenkins-test
+      app: http-go
   template:
     metadata:
       labels:
-        app: jenkins-test
+        app: http-go
     spec:
       containers:
-      - name: jenkins
-        image: jenkins/jenkins
+      - name: http-go
+        image: gasbugs/http-go:v1
         ports:
         - containerPort: 8080
           protocol: TCP
-
