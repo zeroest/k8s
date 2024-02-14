@@ -3,6 +3,7 @@
 
 [[k8s docs] Service](https://kubernetes.io/docs/concepts/services-networking/service/)  
 [[gun_123] 쿠버네티스 서비스 타입](https://velog.io/@gun_123/%EC%BF%A0%EB%B2%84%EB%84%A4%ED%8B%B0%EC%8A%A4-%EC%84%9C%EB%B9%84%EC%8A%A4-%ED%83%80%EC%9E%85)  
+[[seongjin.me] 쿠버네티스에서 반드시 알아야 할 서비스(Service) 유형](https://seongjin.me/kubernetes-service-types/)
 
 포드의 문제점
 - 포드는 일시적으로 생성한 컨테이너의 집합
@@ -19,12 +20,26 @@
 
 [[k8s docs] Service type](https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types)
 
-1. [ClusterIP](./clusterIp)
-2. [NodePort](./nodeport)
+1. [ClusterIP](./9-1clusterIp)
+    - [Endpoints](./9-2endpoint)
+    - 클러스터 내부에서만 접근
+2. [NodePort](./9-3nodeport)
+    - 외부 노출
+    - 노드 자체 포트를 사용하여 파드로 리다이렉션
 3. [LoadBalancer](./loadbalancer)
-4. ExternalName
-5. Headless
-6. Ingress
+    - 외부 노출
+    - NodePort를 기반으로 동작
+    - L4 와 비슷함
+    - 클라우드 의존적
+    - 외부 게이트웨이를 사용해 노드 파드로 리다이렉션
+4. Ingress
+    - 외부 노출
+    - NodePort를 기반으로 동작
+    - L7 과 비슷함
+    - 클라우드 의존적
+    - 하나의 IP 주소를 통해 여러 서비스를 제공하는 특별한 메커니즘
+5. ExternalName
+6. Headless
 
 ## 서비스 세션 고정
 
@@ -70,4 +85,4 @@ Events:            <none>
 ## 외부 IP 연결 설정
 
 - Service와 Endpoints 리소스 모두 생성 필요
-- [Endpoint 참고](./endpoint)
+- [Endpoint 참고](./9-2endpoint)

@@ -10,9 +10,9 @@ spec:
   selector:
     app: http-go
   ports:
-  - port: 80
+  - port: 80 # 서비스의 포트
     protocol: TCP
-    targetPort: 8080
-    nodePort: 30001
+    targetPort: 8080 # 파드의 포트
+    nodePort: 30001 # 최종적으로 서비스되는 포트
     
 
