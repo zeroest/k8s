@@ -9,6 +9,12 @@
 - 30000-32767 포트만 사용가능
 - nodePort 미설정시 랜덤한 포트로 설정
 
+## 노드포트 서비스의 패킷 흐름
+
+[[k8s docs] Virtual IPs and Service Proxies](https://kubernetes.io/docs/reference/networking/virtual-ips/)
+
+![Virtual IPs and Service Proxies](img/virtual-ips-and-service-proxies.png)
+
 ## 노드포트를 활용한 로드밸런싱
 ![Load balancing using node ports](img/loadbalancing-using-nodeports.png)
 

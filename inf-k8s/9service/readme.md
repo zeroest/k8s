@@ -26,7 +26,7 @@
 2. [NodePort](./9-3nodeport)
     - 외부 노출
     - 노드 자체 포트를 사용하여 파드로 리다이렉션
-3. [LoadBalancer](./loadbalancer)
+3. [LoadBalancer](./9-4loadbalancer)
     - 외부 노출
     - NodePort를 기반으로 동작
     - L4 와 비슷함
