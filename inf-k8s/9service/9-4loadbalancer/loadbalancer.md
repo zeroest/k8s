@@ -1,6 +1,8 @@
 
 # LoadBalancer
 
+[AWS Load Balancer Controller](https://aws.amazon.com/ko/blogs/containers/introducing-aws-load-balancer-controller/)
+
 - NodePort 서비스의 확장된 서비스
 - 클라우드 서비스에서 사용 가능
 - yaml 파일에서 타입을 LoadBalancer 설정
